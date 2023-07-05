@@ -1,13 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+from .models import Post
 
 # Create your views here.
 
-def post(request):
-    return HttpResponse("this is the POST homepage")
+def main(request):
+    template = loader.get_template('posts/main.html')
+    return HttpResponse(template.render())
 
-def post_list(request):
-    return HttpResponse("this is the list POST LIST")
+def posts(request):
+    myposts = Post.objects.all().values()
+    template = loader.get_template('posts/all_posts.html')
+    context = {
+        'myposts': myposts,
+    }
+    return HttpResponse(template.render(context, request))
 
-def post_nekaj(request):
-    return HttpResponse("this is POST NEKAJ")
+def details(request, id):
+    mypost = Post.objects.get(id=id)
+    template = loader.get_template('posts/details.html')
+    context = {
+        'mypost': mypost,
+    }
+    return HttpResponse(template.render(context, request))
+
