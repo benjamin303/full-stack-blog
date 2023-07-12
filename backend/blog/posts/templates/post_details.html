@@ -1,0 +1,21 @@
+
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mypost.title }}
+{% endblock %}
+
+
+{% block content %}
+  <h1> {{ mypost.title }}</h1>
+  
+  <p>Content {{ mypost.content }}</p>
+  <p>Author: {{ mypost.author }}</p>
+  <p>Created date: {{ mypost.created_date }}</p>
+  <p>Published date: {{ mypost.published_date }}</p>
+
+  <img src={mypost.images} alt="post image"/>
+  
+  <p>Back to <a href="/posts">Posts</a></p>
+  
+{% endblock %}

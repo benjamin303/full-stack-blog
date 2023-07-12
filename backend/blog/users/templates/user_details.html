@@ -1,0 +1,31 @@
+
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ myuser.firstname }} {{ myuser.lastname }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ myuser.firstname }} {{ myuser.lastname }}</h1>
+  
+  <p>Username {{ myuser.username }}</p>
+  <hr>
+  <p>Email: {{ myuser.email }}</p>
+  <hr>
+  <p>Gender: {{ myuser.gender }}</p>
+  <hr>
+  <p>Bio: {{ myuser.bio }}</p>
+  <hr>
+  <p>Is active: {{ myuser.is_active }}</p>
+  <hr>
+  <p>Is staff: {{ myuser.is_staff }}</p>
+  <hr>
+  <p>Joined date: {{ myuser.joined_date }}</p>
+  <hr>
+  <img src={myuser.profile_picture} style="width: 200px; height: auto;" alt="Profile picture"/>
+  <hr>
+  
+  <p>Back to <a href="/users">Users</a></p>
+  
+  {% endblock %}
