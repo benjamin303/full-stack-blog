@@ -1,4 +1,2 @@
 mysqlclient
 mysql-connector-python
-Pillow
-imagekit

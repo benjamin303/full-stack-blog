@@ -1,20 +1,21 @@
 from django.db import models
+# from django.contrib.auth import get_user_model
+
+# User = get_user_model()
 
 # Create your models here.
 
 class Post(models.Model):
-    id = models.BigAutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)  # A slug field for URL-friendly representation of the title
-    # author = models.ForeignKey(User, on_delete=models.CASCADE)  # Assuming you have a User model for authors
     content = models.TextField()
+    slug = models.SlugField(unique=True)
+    # author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(null=True, blank=True)
-    featured_image = models.ImageField(upload_to='post_images/', null=True, blank=True)
-    # categories = models.ManyToManyField(Category)
+    images = models.ImageField(upload_to='post_images/', null=True, blank=True)
 
     show_in_api = models.BooleanField(default=True)
-
 
     def __str__(self):
         return f"{self.title} {self.created_date}"
