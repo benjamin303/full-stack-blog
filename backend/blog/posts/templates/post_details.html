@@ -9,12 +9,16 @@
 {% block content %}
   <h1> {{ mypost.title }}</h1>
   
-  <p>Content {{ mypost.content }}</p>
+  <p>Content: {{ mypost.content }}</p>
+  <hr>
   <p>Author: {{ mypost.author }}</p>
+  <hr>
   <p>Created date: {{ mypost.created_date }}</p>
+  <hr>
   <p>Published date: {{ mypost.published_date }}</p>
+  <hr>
 
-  <img src={mypost.images} alt="post image"/>
+  <img src={{mypost.images}} alt="post image"/>
   
   <p>Back to <a href="/posts">Posts</a></p>
   

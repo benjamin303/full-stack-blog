@@ -11,8 +11,8 @@ class Post(models.Model):
     content = models.TextField()
     slug = models.SlugField(unique=True)
     # author = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(auto_now_add=True)
-    published_date = models.DateTimeField(null=True, blank=True)
+    created_date = models.DateField(auto_now_add=True)
+    published_date = models.DateField(null=True, blank=True)
     images = models.ImageField(upload_to='post_images/', null=True, blank=True)
 
     show_in_api = models.BooleanField(default=True)

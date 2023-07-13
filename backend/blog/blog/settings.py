@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'full_stack_blog_django',
         'USER': 'benjamin',
         'PASSWORD': 'benjamin',
-        'HOST':'192.168.1.103',
+        'HOST':'192.168.1.102',
         'PORT':'3306',
     }
 }

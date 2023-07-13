@@ -12,7 +12,7 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     bio = models.TextField(null=True, blank=True)
     profile_picture = models.ImageField(upload_to='user_profiles', null=True, blank=True)
-    joined_date = models.DateTimeField(null=True, default=timezone.now)
+    joined_date = models.DateField(null=True, default=timezone.now)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     gender = (
