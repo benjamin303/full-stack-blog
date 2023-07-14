@@ -14,6 +14,8 @@ class Post(models.Model):
     created_date = models.DateField(auto_now_add=True)
     published_date = models.DateField(null=True, blank=True)
     images = models.ImageField(upload_to='post_images/', null=True, blank=True)
+    keywords = models.CharField(max_length=255, blank=True)
+
 
     show_in_api = models.BooleanField(default=True)
 

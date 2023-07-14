@@ -23,7 +23,7 @@ Details about {{ myuser.firstname }} {{ myuser.lastname }}
   <hr>
   <p>Joined date: {{ myuser.joined_date }}</p>
   <hr>
-  <img src={myuser.profile_picture} style="width: 200px; height: auto;" alt="Profile picture"/>
+  <img src="{{ myuser.profile_picture.url }}" style="width: 200px; height: auto;" alt="Profile picture" />
   <hr>
   
   <p>Back to <a href="/users">Users</a></p>
