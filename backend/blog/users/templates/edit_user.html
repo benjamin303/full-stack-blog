@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+    User
+{% endblock %}
+
+{% block content %}
+
+<h1 class="title">Edit User</h1>
+
+<form method="post" enctype="multipart/form-data">  <!-- Add enctype for file uploads -->
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+</form>
+
+{% endblock %}

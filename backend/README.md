@@ -32,3 +32,6 @@ Others commands:
     $ python manage.py createsuperuser
 
     $ python manage.py runserver
+
+python3 manage.py livereload
+python3 manage.py runserver

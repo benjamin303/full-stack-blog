@@ -1,14 +1,44 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/styles.css' %}"
+    />
+  </head>
+  <body>
     
-    {% block content %}
-    {% endblock %}
-    
-</body>
+    <div class="header">
+      <a href="/" class="logo">MyBlog</a>
+      <div class="links">
+        <div class="dropdown">
+          <a href="/posts" class="no-styles">Posts</a>
+          <div class="dropdown-content">
+            <div class="link"><a href="/posts">List</a></div>
+            <div class="link"><a href="/posts/create">Create</a></div>
+            <!-- <div class="link"><a href="">Edit</a></div> -->
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="/users" class="no-styles">Users</a>
+          <div class="dropdown-content">
+            <div class="link"><a href="/users">List</a></div>
+            <div class="link"><a href="/users/create">Create</a></div>
+            <!-- <div class="link"><a href="">Edit</a></div> -->
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container">
+        {% block content %} {% endblock %}
+      </div>
+      <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </body>
 </html>

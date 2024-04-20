@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'posts',
     'users',
     'home',
+    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -89,7 +91,7 @@ DATABASES = {
         'NAME': 'full_stack_blog_django',
         'USER': 'benjamin',
         'PASSWORD': 'benjamin',
-        'HOST':'192.168.1.102',
+        'HOST':'192.168.1.243',
         'PORT':'3306',
     }
 }
@@ -137,3 +139,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+LIVERELOAD_PORT = 3333

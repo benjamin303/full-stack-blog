@@ -1,0 +1,143 @@
+@import "variables.css";
+
+body {
+    margin: 0 5%;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--font);
+    font-size: 16px;
+}
+.container{
+    margin: 0 5%;
+}
+
+.header {
+    position: relative;
+    padding: 2% 5%;
+    display: flex;
+    align-items: center;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 95%;
+    height: 1px;
+    background-color: black;
+}
+
+.logo,
+.links .dropdown,
+.links a {
+    text-decoration: none;
+    font-size: 20px;
+    color: inherit;
+}
+
+.logo {
+    flex: 1;
+}
+
+.links,
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown{
+    margin: 0 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    border: 1px solid black;
+    background-color: var(--background);
+    /* padding: 5px; */
+}
+
+
+.dropdown-content a {
+    color: var(--font);
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightgray;
+}
+
+.no-styles {
+    text-decoration: none;
+    color: inherit;
+}
+
+.center {
+    text-align: center;
+}
+
+.title{
+    font-size: 45px;
+}
+.text-list{
+    font-size: 30px;
+}
+.text-content{
+    font-size: 25px;
+}
+
+.text{
+    font-size: 25px;
+    color: var(--font);
+}
+.text input, textarea{
+    font-size: 15px;
+}
+
+.divs-inline-block{
+    display: inline-block;
+}
+.form-label{
+    display: inline-block;
+    width: 150px;
+}
+.text input, textarea{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.button-submit{
+    margin: 10px 0;
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 20px;
+}
+
+.button-submit:hover{
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+#show_in_api{
+    width: 20px;
+    height: 20px;
+}
+
+.icons {
+    margin-left: 20px;
+}
+.inline-block-auto{
+    display: inline-block;
+    /* width: 200px; */
+}

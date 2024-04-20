@@ -7,13 +7,20 @@
 
 {% block content %}
 
-    <p><a href="/">HOME</a></p>
+    <h1 class="title">Posts</h1>
 
-    <h1>Posts</h1>
-
-    <ul>
+    <ul style="list-style-type:square;" class="text-list">
         {% for x in myposts %}
-        <li><a href="details/{{ x.id }}">{{ x.title }}</a></li>
+        <li>
+          <div class="inline-block-auto">
+            <a href="details/{{ x.id }}" class="no-styles">{{ x.title }}</a>
+          </div>
+          <div class="inline-block-auto">
+            <a href="post/{{ x.id }}/edit/">
+              <box-icon class="icons" name='edit' color=var(--font)></box-icon>
+            </a>
+          </div>
+        </li>
         {% endfor %}
     </ul>
 

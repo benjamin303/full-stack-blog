@@ -1,0 +1,57 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Create New User
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="title">Create New User</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.firstname.label_tag }}
+        {{ form.firstname }}
+
+        {{ form.lastname.label_tag }}
+        {{ form.lastname }}
+
+        {{ form.username.label_tag }}
+        {{ form.username }}
+
+        {{ form.email.label_tag }}
+        {{ form.email }}
+
+        {{ form.password.label_tag }}
+        {{ form.password }}
+
+        {{ form.bio.label_tag }}
+        {{ form.bio }}
+
+        {{ form.profile_picture.label_tag }}
+        {{ form.profile_picture }}
+        
+        {{ form.joined_date.label_tag }}
+        {{ form.joined_date }}
+        
+        {{ form.gender.label_tag }}
+        {{ form.gender }}
+        
+        <button type="submit">Save User</button>
+    </form>
+    {% if form.errors %}
+      <div class="alert alert-danger">
+        <strong>Error:</strong> Please correct the following errors.
+        <ul>
+          {% for field in form %}
+            {% for error in field.errors %}
+              <li>{{ field.label_tag }}: {{ error }}</li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+{% endblock %}
+
